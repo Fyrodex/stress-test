@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Stresli Sınav Uygulaması</title>
+  <link rel="stylesheet" href="/src/style.css">
+</head>
+<body>
+  <div id="timer-floating" style="display:none;">00:00</div>
+  <div id="loader-bg">
+    <div id="loader-logo">
+      <div class="loader-spinner"></div>
+      <div class="loader-text" id="loader-text">Yükleniyor...</div>
+    </div>
+  </div>
+  <div id="header-bar">
+    <img src="images/logo.png" alt="logo" id="site-logo" />
+    <div class="header-title-group">
+      <h1>Stres Testi</h1>
+    </div>
+    
+  </div>
+  <div id="start-screen">
+    <canvas id="stars-bg"></canvas>
+    <div class="start-card">
+      <div class="start-icon">🧠</div>
+      <h2>Stres Testine Hoş Geldin!</h2>
+      <p>Bu test ile stres seviyeni ve stres altındaki performansını ölçebilirsin.<br>Her soruya dürüstçe cevap ver, sonucu sadece sen göreceksin.</p>
+      <button id="start-btn">Teste Başla</button>
+    </div>
+  </div>
+  <div id="result-loading" style="display:none;">
+    <div class="result-loading-card">
+      <div class="result-loading-icon">📊</div>
+      <h2>Sınav Bitti!</h2>
+      <p>Sonuçlarınız hesaplanıyor ve analiz ediliyor...</p>
+      <div class="result-loading-spinner"></div>
+      <div class="result-loading-text">Sonuçlar yükleniyor</div>
+    </div>
+  </div>
+  <div id="app-container">
+    <div class="app-icon">🧠</div>
+    <header>
+      <h1>Stres Testi</h1>
+      <div id="progress-bar"><span id="progress"></span><span id="progress-percent"></span></div>
+    </header>
+    <main>
+      <div id="question-area">
+        <div id="question-text">Soru burada görünecek</div>
+        <div id="options"></div>
+        <div id="matching-area" style="display:none;"></div>
+        <div id="answer-warning" style="display:none; color:#d32f2f; font-weight:bold; margin-top:10px;"></div>
+      </div>
+      <div id="timer" style="display:none;">00:00</div>
+      <div class="nav-btns">
+        <button id="prev-btn" style="display:none">Önceki</button>
+        <button id="next-btn" disabled>Sonraki</button>
+      </div>
+    </main>
+    <footer>
+      
+    </footer>
+  </div>
+  <script src="/src/questions.js"></script>
+  <script src="/src/mock-api.js"></script>
+  <script src="/src/api.js"></script>
+  <script src="/src/app.js"></script>
+</body>
+</html> 
